@@ -1,0 +1,51 @@
+<head>
+  <title>Arcnet Development</title>
+</head>
+
+<body>
+
+  {{> navbar }}
+  {{> welcome }}
+  {{> input }}
+  {{> messages }}
+</body>
+
+<template name="welcome">
+  <p> Bem-vindo ao Chat da Arcnet! </p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+  <div class="chat-message">
+     <div style="margin-right: 10px"> <img class="img-rounded" style="height: 32px; margin-top: 4px;" src="{{picture_url}}" /> </div> {{message}}<br>
+  </div>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>Mensagem: <input type="text" id="message"></p>
+</template>
+
+<template name="navbar">
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Arcnet Development</a>
+    <ul class="nav pull-right">
+      <li style="margin-right: 10px"> <img class="img-rounded" style="height: 32px; margin-top: 4px;" src="{{currentUser.profile.picture}}" /> </li>
+      <li style="margin-top:13px">{{loginButtons align="right"}}<br></li>
+    </ul>
+  </div>
+</div>
+</template>
+
+<template name="header">
+  <div class="navbar">
+    <div class="navbar-inner">
+        <div class="nav pull-left">
+          <h5> Arcnet Development </h5>
+        </div>
+        <ul class="nav pull-right">
+        </ul>
+    </div>
+  </div>
+</template>
